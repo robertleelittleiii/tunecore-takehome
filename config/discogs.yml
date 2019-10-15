@@ -1,0 +1,10 @@
+development:
+    api_key: "CpzotFHuCgbpZmrqUJoS"
+    api_secret: "deDtnTQANIbKzNSzLesybOYVFauyMCaD"
+    songs_to_load:   500
+    albums_to_load:  100
+    artists_to_load: 10
+    search_terms: blues
+   
+production:
+    << *development
