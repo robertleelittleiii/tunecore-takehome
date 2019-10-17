@@ -16,7 +16,6 @@
     <% @songs.each do |song| %>
       <tr>
         <td><%= song.song_title %></td>
-        <td><%= song.artist_id %></td>
         <td><%= song.album_id %></td>
         <td><%= link_to 'Show', song %></td>
         <td><%= link_to 'Edit', edit_song_path(song) %></td>

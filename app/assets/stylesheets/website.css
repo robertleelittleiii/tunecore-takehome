@@ -1,0 +1,77 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 16, 2019, 9:27:08 PM
+    Author     : rlittle
+*/
+
+
+/* results table defs*/
+a#sort_button {
+    font-weight: 100;
+    padding: 5px 10px;
+    border: 0px solid black;
+    text-decoration: none;
+    margin: 10px;
+    background-color: transparent;
+}
+
+a#sort_button.col-selected {
+    font-weight: bolder;
+}
+
+div#results-space table {
+    width: 1024px;
+    display: table;
+    margin: auto;
+}
+
+div#results-space table td {
+    width: 33%;
+    text-align: center;
+}
+
+div#results-space table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+
+form#search-form input {
+    display: inline-block;
+    position: relative;
+    margin: 20px;
+}
+
+form#search-form {
+    border: 2px solid gray;
+    display: block;
+    position: relative;
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+div.pagination em.current {
+    background-color: #333;
+    padding: 5px 10px;
+    color: white;
+    font-weight: bold;
+}
+
+
+div.pagination {
+    margin: auto;
+    width: fit-content;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+h1.tunecore-search-title {
+    text-align: center;
+}

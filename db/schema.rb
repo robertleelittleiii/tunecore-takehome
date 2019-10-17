@@ -10,20 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_15_201344) do
+ActiveRecord::Schema.define(version: 2019_10_16_192227) do
 
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "album_title"
     t.bigint "artist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["album_title"], name: "index_albums_on_album_title", unique: true
     t.index ["artist_id"], name: "index_albums_on_artist_id"
+    t.index ["id", "album_title"], name: "index_albums_on_id_and_album_title", unique: true
   end
 
   create_table "artists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "artist_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["artist_name"], name: "index_artists_on_artist_name", unique: true
+    t.index ["id", "artist_name"], name: "index_artists_on_id_and_artist_name", unique: true
   end
 
   create_table "songs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -32,6 +36,8 @@ ActiveRecord::Schema.define(version: 2019_10_15_201344) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["album_id"], name: "index_songs_on_album_id"
+    t.index ["id", "song_title"], name: "index_songs_on_id_and_song_title"
+    t.index ["song_title"], name: "index_songs_on_song_title"
   end
 
   add_foreign_key "albums", "artists"

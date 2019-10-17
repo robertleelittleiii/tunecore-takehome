@@ -1,0 +1,22 @@
+
+<table class="ui-widget-content">
+    <thead class="ui-widget-header"> 
+    <tr>
+        <th><%=sort_button_display("Song", "song_title")%></th>
+        <th><%=sort_button_display("Album", "album_title")%></th>
+        <th><%=sort_button_display("Artist", "artist_name")%></th>
+
+    </tr>
+    </thead>
+    <tbody class="ui-widget-content">
+<% @results.each do |song| %>
+    <tr>
+        <td><%=song.song_title%></td>
+        <td><%=song.album.album_title%></td>
+        <td><%=song.album.artist.artist_name%></td>
+    </tr>
+<% end %>
+    </tbody>
+</table>
+
+<%= will_paginate @results %>

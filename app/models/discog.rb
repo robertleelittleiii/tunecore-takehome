@@ -1,3 +1,12 @@
+  #
+  # class Discog
+  #
+  # Simple class to grab data from discogs.com music database using their RESTful API v2.
+  #
+  # Initializer and .yaml file are used for configuration (located in config directory)
+  #
+  
+  
   class Discog
 
     require 'uri'
@@ -20,7 +29,7 @@
     public
 
     def search(search_terms, page=1, result_count=50)
-      search_response = api_call("search", {q: search_terms, pages: page, per_page: result_count})
+      search_response = api_call("search", {q: search_terms, page: page, per_page: result_count})
 
       @last_results = JSON.parse(search_response.read_body)
       return @last_results
@@ -47,7 +56,6 @@
         url = URI("#{API_URL}#{function}/#{argument}")
       end
 
-      puts(url)
       http = Net::HTTP.new(url.host, url.port)
       http.use_ssl = true
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE

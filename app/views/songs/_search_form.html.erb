@@ -1,0 +1,6 @@
+<%= form_with(model:@song, url: find_songs_url(:format => "html"), method: "get", format: :json, id: "search-form") do %>
+  <%= text_field(:search, :song_title, placeholder:"song") %>
+  <%= text_field(:search,:album_title, placeholder:"album") %>
+  <%= text_field(:search,:artist_name, placeholder:"artist") %>
+  <%= submit_tag("Search") %>
+<% end %>

@@ -34,5 +34,13 @@ RSpec.describe SongsController, type: :routing do
     it "routes to #destroy" do
       expect(:delete => "/songs/1").to route_to("songs#destroy", :id => "1")
     end
+    
+      it "routes to #search" do
+      expect(:get => "/songs/search").to route_to("songs#search")
+    end
+    
+     it "routes to #find" do
+      expect(:get => "/songs/find").to route_to("songs#find")
+    end
   end
 end

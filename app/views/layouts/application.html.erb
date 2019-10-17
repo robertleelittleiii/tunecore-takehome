@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TunecoreTakehome</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <head>
+        <title>TunecoreTakehome</title>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <body>
-    <%= yield %>
-  </body>
+        <%= stylesheet_link_tag "website.css" , media: 'all', 'data-turbolinks-track' => true %>
+        <%= stylesheet_link_tag "website_medium.css", :media=>"screen and (max-width: 768px)"   %>
+        <%= stylesheet_link_tag "website_small.css", :media=>"screen and (max-width: 524px)"   %>
+    </head>
+
+    <body>
+        <%= yield %>
+    </body>
 </html>
